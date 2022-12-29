@@ -8,7 +8,7 @@ const CompleteTask = () => {
   const [completeTasks, setCompleteTasks] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:4000/complete-task?email=${user?.email}`)
+    fetch(`https://to-do-list-server-xi.vercel.app/complete-task?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setCompleteTasks(data));
     // .catch(err => console.log(err))
@@ -19,7 +19,7 @@ const CompleteTask = () => {
   const handlerDelete = (id) => {
     const procedd = window.confirm("Are You Sure, To Delete This Item");
     if (procedd) {
-      fetch(`http://localhost:4000/complete-task/${id}`, {
+      fetch(`https://to-do-list-server-xi.vercel.app/complete-task/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

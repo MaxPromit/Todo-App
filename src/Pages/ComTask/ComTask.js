@@ -8,13 +8,13 @@ const ComTask = ({ completeTasks, handlerDelete }) => {
   const { taskTitle, message, _id } = completeTasks;
   const {user} = useContext(AuthContext)
   const navigate = useNavigate();
-
+  
 
   const [comments, setComments] = useState([])
   const [load, setLoad] = useState(true)
  
   useEffect( ()=>{
-    fetch(`http://localhost:4000/commentPost?email=${user?.email}`)
+    fetch(`https://to-do-list-server-xi.vercel.app/commentPost?email=${user?.email}`)
         .then(res => res.json())
         .then(data => setComments(data))
         // .catch(err => console.log(err))
@@ -33,7 +33,7 @@ const ComTask = ({ completeTasks, handlerDelete }) => {
         commentField,
         email
     }
-    fetch('http://localhost:4000/commentPost', {
+    fetch('https://to-do-list-server-xi.vercel.app/commentPost', {
             method: 'PUT',
             headers: {
               'content-type': 'application/json'

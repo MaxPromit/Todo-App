@@ -17,7 +17,7 @@ const ReviewsCart = ({review, handlerDelete}) => {
             email
         }
 
-        fetch('http://localhost:4000/complete-task', {
+        fetch('https://to-do-list-server-xi.vercel.app/complete-task', {
             method: 'POST',
             headers: {
               'content-type': 'application/json'

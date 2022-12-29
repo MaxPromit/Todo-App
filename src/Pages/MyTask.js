@@ -10,7 +10,7 @@ const MyTask = () => {
   const [reviews, setReviews] = useState([])
  
   useEffect( ()=>{
-    fetch(`http://localhost:4000/reviews?email=${user?.email}`)
+    fetch(`https://to-do-list-server-xi.vercel.app/reviews?email=${user?.email}`)
         .then(res => res.json())
         .then(data => setReviews(data))
         // .catch(err => console.log(err))
@@ -22,7 +22,7 @@ const MyTask = () => {
     const handlerDelete = id =>{
       const procedd = window.confirm('Are You Sure, To Delete This Item')
       if(procedd){
-          fetch(`http://localhost:4000/reviews/${id}`, {
+          fetch(`https://to-do-list-server-xi.vercel.app/reviews/${id}`, {
               method: 'DELETE'
           })
           .then(res => res.json())
